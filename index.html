@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>YOUR NAME — Portfolio</title>
+  <meta name="description" content="Personal portfolio of YOUR NAME — web developer / designer / engineer">
+  <style>
+    :root{
+      --bg:#0f1724; /* deep navy */
+      --card:#0b1220;
+      --accent:#06b6d4; /* teal */
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:#e6eef6;
+      background:linear-gradient(180deg,var(--bg),#07101a 80%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:24px;
+    }
+    .container{max-width:1100px;margin:0 auto}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:50px;height:50px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700}
+    .brand h1{font-size:18px;margin:0}
+    nav{display:flex;gap:12px}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px}
+    nav a:hover{background:var(--glass);color:var(--accent)}
+
+    main{display:grid;grid-template-columns:1fr;gap:22px}
+
+    .hero{display:flex;flex-direction:row;gap:20px;align-items:center;padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:var(--radius)}
+    .hero .left{flex:1}
+    .hero h2{margin:0 0 8px 0;font-size:28px}
+    .hero p{margin:0 0 12px;color:var(--muted)}
+    .cta{display:inline-block;padding:10px 16px;background:var(--accent);color:#052023;border-radius:10px;font-weight:600;text-decoration:none}
+    .profile-card{width:170px;padding:12px;background:linear-gradient(180deg,#0b1320, #08101a);border-radius:12px;text-align:center}
+    .profile-pic{width:110px;height:110px;border-radius:50%;display:inline-grid;place-items:center;background:linear-gradient(135deg,#1e293b, #3b82f6);font-weight:700}
+
+    section.card{padding:22px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:12px}
+    h3{margin-top:0}
+
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+    .skill{background:var(--card);padding:8px 10px;border-radius:10px;color:var(--muted);font-weight:600}
+
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .project{background:#071126;padding:14px;border-radius:10px}
+    .project h4{margin:0 0 6px 0}
+    .project p{margin:0;color:var(--muted);font-size:14px}
+    .tags{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+    .tag{padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);font-size:12px}
+
+    footer{margin-top:18px;padding:12px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+    /* contact form */
+    .contact-form{display:grid;gap:10px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:8px;color:inherit}
+    input::placeholder,textarea::placeholder{color:var(--muted)}
+    button[type=submit]{padding:10px;border-radius:8px;border:0;background:var(--accent);font-weight:700}
+
+    /* small screens */
+    @media (max-width:800px){
+      .hero{flex-direction:column;align-items:flex-start}
+      .grid-2{grid-template-columns:1fr}
+      .projects{grid-template-columns:1fr}
+      nav{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">Y</div>
+        <div>
+          <h1>YOUR NAME</h1>
+          <div style="font-size:12px;color:var(--muted)">Web Developer • Designer • Problem solver</div>
+        </div>
+      </div>
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#edu">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="left">
+          <h2>Hi — I'm MOHD SHAHZEB</h2>
+          <p>I build clean, accessible web interfaces and small web apps. I enjoy problem solving, automation, and learning new technologies. Currently focused on front-end development and lightweight backend services.</p>
+          <a class="cta" href="#projects">See my work</a>
+          <div style="margin-top:12px;color:var(--muted);font-size:14px">Available for internships & freelance projects.</div>
+        </div>
+        <aside class="profile-card">
+          <div class="profile-pic">Y</div>
+          <div style="margin-top:10px;font-weight:700">MOHD SHAHZEB</div>
+          <div style="font-size:13px;color:var(--muted)">Delhi, INDIA</div>
+          <div style="margin-top:10px;display:flex;gap:8px;justify-content:center">
+            <!-- Inline SVG icons -->
+            <a href="https://github.com/shahzeb1729" title="GitHub" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.71-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1.01.07 1.54 1.04 1.54 1.04.9 1.54 2.36 1.1 2.94.84.09-.65.35-1.1.63-1.35-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85.004 1.71.114 2.51.34 1.9-1.29 2.74-1.02 2.74-1.02.55 1.38.21 2.4.11 2.65.64.7 1.03 1.6 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86 0 1.34-.01 2.42-.01 2.75 0 .26.18.57.69.47A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z" fill="currentColor"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/shahzeb-malik-579523238/" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5a2.5 2.5 0 11.02 5.001 2.5 2.5 0 01-.02-5zm.02 6.5H2v11h3V10zm7 0h-3v11h3v-6.1c0-3.38 4-3.65 4 0V21h3v-7.5c0-6.16-6.63-5.94-7-2.9V10z" fill="currentColor"/></svg>
+            </a>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about" class="card">
+        <h3>About Me</h3>
+        <p>I'm a motivated developer with a strong interest in creating intuitive user experiences. I enjoy collaborating in teams and contributing to open-source projects. My strengths include front-end development, writing clear documentation, and quickly prototyping ideas.</p>
+      </section>
+
+      <section id="edu" class="card">
+        <div class="grid-2">
+          <div>
+            <h3>Education</h3>
+            <ul style="color:var(--muted);padding-left:18px">
+              <li><strong>Bachelor of Technology</strong> — Computer Engineering,Delhi technological University (2029)</li>
+              <li><strong>Senior Secondary</strong> — ABC Higher Secondary School (2018)</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Skills</h3>
+            <div class="skills">
+              <div class="skill">HTML</div>
+              <div class="skill">CSS</div>
+              <div class="skill">JavaScript</div>
+              <div class="skill">Figma</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="card">
+        <h3>Projects / Portfolio</h3>
+        <div class="projects">
+          <article class="project">
+            <h4>Project Alpha — Personal Blog</h4>
+            <p>A lightweight, markdown-driven blog built with a static-site generator. Features responsive design, search, and tag-based categorization.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Static site</span></div>
+            <div style="margin-top:8px;font-size:13px;color:var(--muted)">Repo: <a style="color:var(--accent)" href="https://github.com/your-github/project-alpha" target="_blank" rel="noopener noreferrer">github.com/your-github/project-alpha</a></div>
+          </article>
+
+          <article class="project">
+            <h4>Project Beta — Task Manager App</h4>
+            <p>A small single-page app to manage personal tasks with localStorage persistence and filtering. Built as a learning project to practice state management.</p>
+            <div class="tags"><span class="tag">JavaScript</span><span class="tag">UI</span><span class="tag">LocalStorage</span></div>
+            <div style="margin-top:8px;font-size:13px;color:var(--muted)">Live: <a style="color:var(--accent)" href="#" target="_blank" rel="noopener noreferrer">(add your hosted URL)</a></div>
+          </article>
+
+          <article class="project">
+            <h4>Project Gamma — Data Visualizer</h4>
+            <p>Interactive charts and small data transformations to visualize CSV data. Includes CSV import and export capabilities.</p>
+            <div class="tags"><span class="tag">Charts</span><span class="tag">JS</span><span class="tag">UX</span></div>
+            <div style="margin-top:8px;font-size:13px;color:var(--muted)">Repo: <a style="color:var(--accent)" href="https://github.com/your-github/project-gamma" target="_blank" rel="noopener noreferrer">github.com/your-github/project-gamma</a></div>
+          </article>
+
+          <article class="project">
+            <h4>Project Delta — Mini E‑commerce UI</h4>
+            <p>A mock e-commerce front-end demonstrating product listing, filtering, and a simple cart UI. Designed for a small usability study.</p>
+            <div class="tags"><span class="tag">React</span><span class="tag">UI</span><span class="tag">Design</span></div>
+            <div style="margin-top:8px;font-size:13px;color:var(--muted)">Live: <a style="color:var(--accent)" href="#" rel="noopener noreferrer">(add hosted link)</a></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="card">
+        <h3>Contact</h3>
+        <div class="grid-2">
+          <div>
+            <p style="color:var(--muted)">Feel free to reach out for project collaboration or internship opportunities.</p>
+            <ul style="list-style:none;padding:0;color:var(--muted)">
+              <li><strong>Email:</strong> <a href="mailto:your.email@example.com" style="color:var(--accent)">your.email@example.com</a></li>
+              <li><strong>Phone:</strong> +91-XXXXXXXXXX</li>
+              <li><strong>Location:</strong> City, Country</li>
+            </ul>
+            <div style="margin-top:10px">
+              <a href="https://github.com/your-github" target="_blank" rel="noopener noreferrer">GitHub</a> •
+              <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+          </div>
+
+          <div>
+            <form class="contact-form" action="mailto:your.email@example.com" method="POST" enctype="text/plain">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="email" name="email" placeholder="Your email" required>
+              <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+              <button type="submit">Send message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> YOUR NAME — Built with ❤️</div>
+      <div style="font-size:13px;color:var(--muted)">Designed for portfolio submission</div>
+    </footer>
+  </div>
+
+  <script>
+    // small script to set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
