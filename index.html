@@ -2,224 +2,384 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MOHD SHAHZEB — Portfolio</title>
-  <meta name="description" content="Personal portfolio of YOUR NAME — web developer / designer / engineer">
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-  }
 
-  /*HERO SECTION*/
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ------------------ ROOT VARIABLES ------------------ */
+:root {
+  --bg: #0d1117;
+  --card: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.1);
+  --text: #e6e6e6;
+  --muted: #9ba1a6;
+  --accent: #3a82f7;
+  --radius: 14px;
+  --transition: 0.25s ease;
+}
+
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ------------------ HEADER ------------------ */
+header {
+  position: sticky;
+  top: 0; z-index: 50;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  background: rgba(13,17,23,0.6);
+  padding: 18px 10%;
+  display: flex; justify-content: space-between;
+  align-items: center;
+}
+
+header h2 {
+  color: var(--accent);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+header nav a {
+  margin-left: 25px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+header nav a:hover {
+  color: var(--accent);
+}
+
+/* ------------------ HERO SECTION ------------------ */
+.hero {
+  padding: 80px 10%;
+  display: flex; justify-content: space-between; align-items: center;
+  animation: fadeIn 1.2s ease;
+}
+
+.hero .left {
+  width: 50%;
+}
+
+.hero h1 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 22px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.cta:hover {
+  background: #1e6ff7;
+  transform: translateY(-2px);
+}
+
+/* PROFILE CARD */
+.profile-card {
+  width: 280px;
+  text-align: center;
+  padding: 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(10px);
+}
+
+.profile-card img {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent);
+}
+
+/* ------------------ CARD SECTIONS ------------------ */
+.card {
+  width: 90%;
+  max-width: 950px;
+  margin: 40px auto;
+  padding: 35px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 0.8s ease;
+}
+
+.card h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: var(--accent);
+  font-size: 22px;
+}
+
+/* ------------------ GRID ------------------ */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+/* ------------------ SKILLS ------------------ */
+.skills {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.skill {
+  background: rgba(58,130,247,0.2);
+  border: 1px solid var(--accent);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ------------------ PROJECTS ------------------ */
+.project {
+  padding: 20px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.project:hover {
+  transform: scale(1.02);
+  border-color: var(--accent);
+}
+
+.tag {
+  background: var(--accent);
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-right: 6px;
+  color: #fff;
+  font-size: 12px;
+}
+
+/* ------------------ CONTACT FORM ------------------ */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.contact-form button:hover {
+  background: #1e6ff7;
+}
+
+/* ------------------ FOOTER ------------------ */
+footer {
+  text-align: center;
+  padding: 35px;
+  color: var(--muted);
+  margin-top: 20px;
+}
+
+/* ------------------ ANIMATIONS ------------------ */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translateY(40px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+@media(max-width:900px) {
   .hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 60px 10%;
-    background: #fff;
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
   }
 
   .hero .left {
-    width: 50%;
-  }
-
-  .hero .left h2 {
-    font-size: 36px;
-    margin-bottom: 15px;
-  }
-
-  .hero img {
-    width: 260px;
-    height: 260px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #000;
-  }
-
-  /* SECTION WRAPPERS */
-  section {
-    padding: 60px 10%;
-  }
-
-  /* ABOUT + CONTACT BOX SAME STYLE */
-  .info-box {
     width: 100%;
-    max-width: 800px;
-    margin: auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
   }
 
-  .info-box h2 {
-    text-align: center;
-    margin-bottom: 15px;
+  .grid-2 {
+    grid-template-columns: 1fr;
   }
 
-  .info-box p {
-    text-align: center;
-    line-height: 1.6;
+  .profile-card img{
+    width:200px;
+    height:200px;
   }
-
-  /* CONTACT FORM FIX */
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 15px;
-  }
-
-  .contact-form button {
-    width: 100%;
-    padding: 12px;
-    background: #000;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-  }
+}
 </style>
-
 </head>
+
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo">M</div>
-        <div>
-          <h1>MOHD SHAHZEB</h1>
-          <div style="font-size:12px;color:var(--muted)">Web Developer • Designer • Problem solver</div>
-        </div>
-        
-      </div>
-      <nav aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#edu">Education</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
 
-    <main>
-      <section id="home" class="hero">
-        <div class="left">
-          <h2>Hi — I'm MOHD SHAHZEB</h2>
-          <p>I build clean, accessible web interfaces and small web apps. I enjoy problem solving, automation, and learning new technologies. Currently focused on front-end development and lightweight backend services.</p>
-          <a class="cta" href="#projects">See my work</a>
-          <div style="margin-top:12px;color:var(--muted);font-size:14px">Available for internships & freelance projects.</div>
-        </div>
-        <aside class="profile-card">
-          <div class="profile-pic">  
-              <img 
-                src="PXL_20251021_085929063.PORTRAIT.jpg" 
-                alt="Profile Picture">
-          </div>
-          <div style="margin-top:10px;font-weight:700">MOHD SHAHZEB</div>
-          <div style="font-size:13px;color:var(--muted)">Delhi, INDIA</div>
-          <div style="margin-top:10px;display:flex;gap:8px;justify-content:center">
-            <!-- Inline SVG icons -->
-            <a href="https://github.com/shahzeb1729" title="GitHub" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.71-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1.01.07 1.54 1.04 1.54 1.04.9 1.54 2.36 1.1 2.94.84.09-.65.35-1.1.63-1.35-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85.004 1.71.114 2.51.34 1.9-1.29 2.74-1.02 2.74-1.02.55 1.38.21 2.4.11 2.65.64.7 1.03 1.6 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86 0 1.34-.01 2.42-.01 2.75 0 .26.18.57.69.47A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z" fill="currentColor"/></svg>
-            </a>
-            <a href="https://www.linkedin.com/in/shahzeb-malik-579523238/" title="LinkedIn" target="_blank" rel="noopener noreferrer">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5a2.5 2.5 0 11.02 5.001 2.5 2.5 0 01-.02-5zm.02 6.5H2v11h3V10zm7 0h-3v11h3v-6.1c0-3.38 4-3.65 4 0V21h3v-7.5c0-6.16-6.63-5.94-7-2.9V10z" fill="currentColor"/></svg>
-            </a>
-          </div>
-        </aside>
-      </section>
+<!-- HEADER -->
+<header>
+  <h2>MOHD SHAHZEB</h2>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#edu">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-      <section id="about" class="card">
-        <h3>About Me</h3>
-        <p>I'm a motivated developer with a strong interest in creating intuitive user experiences. I enjoy collaborating in teams and contributing to open-source projects. My strengths include front-end development, writing clear documentation, and quickly prototyping ideas.</p>
-      </section>
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="left">
+    <h1>Hi, I'm <span style="color:var(--accent)">MOHD SHAHZEB</span></h1>
+    <p>A passionate Web Developer focused on building clean, modern, and efficient user interfaces. Skilled in HTML, CSS, JavaScript, and UI engineering.</p>
+    <a class="cta" href="#projects">View My Work</a>
+  </div>
 
-      <section id="edu" class="card">
-        <div class="grid-2">
-          <div>
-            <h3>Education</h3>
-            <ul style="color:var(--muted);padding-left:18px">
-              <li><strong>Bachelor of Technology</strong> — Computer Engineering,Delhi technological University (2029)</li>
-              <li><strong>Senior Secondary</strong> — A. Schools Of Specialised Education(2024)</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Skills</h3>
-            <div class="skills">
-              <div class="skill">HTML</div>
-              <div class="skill">CSS</div>
-              <div class="skill">JavaScript</div>
-            </div>
-          </div>
-        </div>
-      </section>
-<section id="projects" class="card">
-  <h3>Projects / Portfolio</h3>
-  <div class="projects">
-    <article class="project">
-      <h4>Project Alpha — Personal Blog</h4>
-      <p>A lightweight, markdown-driven blog built with a static-site generator. Features responsive design, search, and tag-based categorization.</p>
-      <div class="tags">
-        <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Static site</span>
-      </div>
-    </article>
-
-    <article class="project">
-      <h4>Project Beta — Task Manager App</h4>
-      <p>A small single-page app to manage personal tasks with localStorage persistence and filtering. Built as a learning project to practice state management.</p>
-      <div class="tags">
-        <span class="tag">JavaScript</span><span class="tag">UI</span><span class="tag">LocalStorage</span>
-      </div>
-    </article>
+  <div class="profile-card">
+    <img src="PXL_20251021_085929063.PORTRAIT.jpg" alt="Profile Picture">
+    <h3 style="margin-top:10px;">MOHD SHAHZEB</h3>
+    <p style="color:var(--muted); font-size:14px;">Delhi, INDIA</p>
   </div>
 </section>
 
-   
-       <section id="contact" class="card">
-        <h3>Contact</h3>
-        <div class="grid-2">
-          <div>
-            <p style="color:var(--muted)">Feel free to reach out for project collaboration or internship opportunities.</p>
-            <ul style="list-style:none;padding:0;color:var(--muted)">
-              <li><strong>Email:</strong> <a href="mohdshahzeb_cse_25a04014@dtu.ac.in" style="color:var(--accent)">mohdshahzeb_cse_25a04014@dtu.ac.in</a></li>
-              <li><strong>Phone:</strong> +91-8810230183</li>
-              <li><strong>Location:</strong> DELHI, INDIA</li>
-            </ul>
-            <div style="margin-top:10px">
-              <a href="https://github.com/shahzeb1729" target="_blank" rel="noopener noreferrer">GitHub</a> •
-              <a href="https://www.linkedin.com/in/shahzeb-malik-579523238/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </div>
-          </div>
+<!-- ABOUT -->
+<section id="about" class="card">
+  <h3>About Me</h3>
+  <p style="text-align:center; color:var(--muted); font-size:15px;">
+    I am a motivated and curious developer with a strong interest in UI/UX, frontend engineering, and building real-world software solutions.
+    I enjoy problem-solving, working with new technologies, and continuously improving my skills.
+  </p>
+</section>
 
-          <div>
-            <form class="contact-form" action="mailto:mohdshahzeb_cse_25a04014@dtu.ac.in" method="POST" enctype="text/plain">
-              <input type="text" name="name" placeholder="Your name" required>
-              <input type="email" name="email" placeholder="Your email" required>
-              <textarea name="message" rows="5" placeholder="Your message" required></textarea>
-              <button type="submit">Send message</button>
-            </form>
-          </div>
-        </div>
-      </section>
+<!-- EDUCATION -->
+<section id="edu" class="card">
+  <div class="grid-2">
+    <div>
+      <h3>Education</h3>
+      <ul style="color:var(--muted); padding-left:18px; line-height:1.7;">
+        <li><strong>B.Tech — Computer Engineering</strong>, Delhi Technological University (2029)</li>
+        <li><strong>Senior Secondary</strong>, A. Schools Of Specialised Education (2024)</li>
+      </ul>
+    </div>
 
-    </main>
-
-    <footer>
-      <div>© <span id="year"></span> MOHD SHAHZEB — Built with ❤️</div>
-      <div style="font-size:13px;color:var(--muted)">Designed for portfolio submission</div>
-    </footer>
+    <div>
+      <h3>Skills</h3>
+      <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <script>
-    // small script to set current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<!-- PROJECTS -->
+<section id="projects" class="card">
+  <h3>Projects</h3>
+
+  <div class="projects">
+
+    <div class="project">
+      <h4>Project Alpha — Personal Blog</h4>
+      <p style="color:var(--muted)">A clean markdown-powered blog with fast loading and minimal UI.</p>
+      <span class="tag">HTML</span>
+      <span class="tag">CSS</span>
+      <span class="tag">Static</span>
+    </div>
+
+    <div class="project" style="margin-top:20px;">
+      <h4>Project Beta — Task Manager App</h4>
+      <p style="color:var(--muted)">A simple and fast task manager using LocalStorage.</p>
+      <span class="tag">JavaScript</span>
+      <span class="tag">LocalStorage</span>
+      <span class="tag">UI</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="card">
+  <h3>Contact</h3>
+  <div class="grid-2">
+
+    <div>
+      <p style="color:var(--muted)">Get in touch for collaborations, internships, or web projects.</p>
+      <ul style="list-style:none; padding:0; line-height:1.7; color:var(--muted)">
+        <li><strong>Email:</strong> mohdshahzeb_cse_25a04014@dtu.ac.in</li>
+        <li><strong>Phone:</strong> +91 88102 30183</li>
+        <li><strong>Location:</strong> Delhi, India</li>
+      </ul>
+    </div>
+
+    <div>
+      <form class="contact-form" action="mailto:mohdshahzeb_cse_25a04014@dtu.ac.in" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> MOHD SHAHZEB — Built with 💙 Technology
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
