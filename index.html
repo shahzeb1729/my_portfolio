@@ -5,101 +5,173 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>MOHD SHAHZEB — Portfolio</title>
   <meta name="description" content="Personal portfolio of YOUR NAME — web developer / designer / engineer">
-  <style>
-    :root{
-      --bg:#0f1724; /* deep navy */
-      --card:#0b1220;
-      --accent:#06b6d4; /* teal */
-      --muted:#94a3b8;
-      --glass: rgba(255,255,255,0.03);
-      --radius:14px;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      color:#e6eef6;
-      background:linear-gradient(180deg,var(--bg),#07101a 80%);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
-      padding:24px;
-    }
-    .container{max-width:1100px;margin:0 auto}
+<style>
+  :root{
+    --bg:#0f1724;
+    --card:#0b1220;
+    --accent:#06b6d4;
+    --muted:#94a3b8;
+    --glass: rgba(255,255,255,0.03);
+    --radius:14px;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  }
 
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:50px;height:50px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700}
-    .brand h1{font-size:18px;margin:0}
-    nav{display:flex;gap:12px}
-    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px}
-    nav a:hover{background:var(--glass);color:var(--accent)}
+  *{box-sizing:border-box}
+  html,body{height:100%}
 
-    main{display:grid;grid-template-columns:1fr;gap:22px}
+  body{
+    margin:0;
+    color:#e6eef6;
+    background:linear-gradient(180deg,var(--bg),#07101a 80%);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.45;
+    padding:24px;
+  }
 
-    .hero{display:flex;flex-direction:row;gap:20px;align-items:center;padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:var(--radius)}
-    .hero .left{flex:1}
-    .hero h2{margin:0 0 8px 0;font-size:28px}
-    .hero p{margin:0 0 12px;color:var(--muted)}
-    .cta{display:inline-block;padding:10px 16px;background:var(--accent);color:#052023;border-radius:10px;font-weight:600;text-decoration:none}
-    .profile-card{width:170px;padding:12px;background:linear-gradient(180deg,#0b1320, #08101a);border-radius:12px;text-align:center}
-    .profile-pic{width:110px;height:110px;border-radius:50%;display:inline-grid;place-items:center;background:linear-gradient(135deg,#1e293b, #3b82f6);font-weight:700}
+  .container{max-width:1100px;margin:0 auto}
 
-    section.card{padding:22px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:12px}
-    h3{margin-top:0}
+  header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{
+    width:50px;height:50px;border-radius:12px;
+    background:linear-gradient(135deg,var(--accent),#7c3aed);
+    display:flex;align-items:center;justify-content:center;font-weight:700;
+  }
+  .brand h1{font-size:18px;margin:0}
 
-    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-    .skills{display:flex;flex-wrap:wrap;gap:10px}
-    .skill{background:var(--card);padding:8px 10px;border-radius:10px;color:var(--muted);font-weight:600}
+  nav{display:flex;gap:12px}
+  nav a{
+    color:var(--muted);
+    text-decoration:none;
+    padding:8px 12px;
+    border-radius:8px;
+  }
+  nav a:hover{
+    background:var(--glass);
+    color:var(--accent);
+  }
 
-    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-    .project{background:#071126;padding:14px;border-radius:10px}
-    .project h4{margin:0 0 6px 0}
-    .project p{margin:0;color:var(--muted);font-size:14px}
-    .tags{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
-    .tag{padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);font-size:12px}
+  main{display:grid;grid-template-columns:1fr;gap:22px}
 
-    footer{margin-top:18px;padding:12px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+  /* HERO SECTION */
+  .hero{
+    display:flex;
+    flex-direction:row;
+    gap:20px;
+    align-items:center;
+    padding:28px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+    border-radius:var(--radius);
+  }
 
-    /* contact form */
-    .contact-form{display:grid;gap:10px}
-    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:8px;color:inherit}
-    input::placeholder,textarea::placeholder{color:var(--muted)}
-    button[type=submit]{padding:10px;border-radius:8px;border:0;background:var(--accent);font-weight:700}
+  .hero .left{flex:1}
+  .hero h2{margin:0 0 8px 0;font-size:28px}
+  .hero p{margin:0 0 12px;color:var(--muted)}
+  .cta{
+    display:inline-block;
+    padding:10px 16px;
+    background:var(--accent);
+    color:#052023;
+    border-radius:10px;
+    font-weight:600;
+    text-decoration:none;
+  }
 
-    /* small screens */
-    @media (max-width:800px){
-      .hero{flex-direction:column;align-items:flex-start}
-      .grid-2{grid-template-columns:1fr}
-      .projects{grid-template-columns:1fr}
-      nav{display:none}
-    }
-     .profile-card {
-    padding: 12px;
-    background: linear-gradient(180deg,#0b1320, #08101a);
-    border-radius: 12px;
-    text-align: center;
-    width: 210px;
+  /* UPDATED PROFILE CARD */
+  .profile-card {
+    padding:12px;
+    width:210px;
+    background:linear-gradient(180deg,#0b1320, #08101a);
+    border-radius:12px;
+    text-align:center;
   }
 
   .profile-pic {
-    width: 180px;
-    height: 180px;
-    border-radius: 35%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #ddd;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#ddd;
+    margin:0 auto;
   }
 
   .profile-pic img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width:100%;
+    height:100%;
+    object-fit:cover;
   }
-  </style>
+
+
+  section.card{
+    padding:22px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+    border-radius:12px;
+  }
+  h3{margin-top:0}
+
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+
+  .skills{display:flex;flex-wrap:wrap;gap:10px}
+  .skill{
+    background:var(--card);
+    padding:8px 10px;
+    border-radius:10px;
+    color:var(--muted);
+    font-weight:600;
+  }
+
+  .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .project{background:#071126;padding:14px;border-radius:10px}
+  .project h4{margin:0 0 6px 0}
+  .project p{margin:0;color:var(--muted);font-size:14px}
+
+  .tags{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+  .tag{
+    padding:6px 8px;
+    border-radius:8px;
+    background:rgba(255,255,255,0.02);
+    font-size:12px;
+  }
+
+  footer{
+    margin-top:18px;
+    padding:12px;
+    color:var(--muted);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  /* Contact Form */
+  .contact-form{display:grid;gap:10px}
+  input,textarea{
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.06);
+    padding:10px;
+    border-radius:8px;
+    color:inherit;
+  }
+  input::placeholder,textarea::placeholder{color:var(--muted)}
+  button[type=submit]{
+    padding:10px;
+    border-radius:8px;
+    border:0;
+    background:var(--accent);
+    font-weight:700;
+  }
+
+  /* Responsive */
+  @media (max-width:800px){
+    .hero{flex-direction:column;align-items:flex-start}
+    .grid-2{grid-template-columns:1fr}
+    .projects{grid-template-columns:1fr}
+    nav{display:none}
+  }
+</style>
 
 </head>
 <body>
@@ -233,6 +305,7 @@
   </script>
 </body>
 </html>
+
 
 
 
