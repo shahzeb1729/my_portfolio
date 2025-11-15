@@ -77,11 +77,21 @@
     }
   </style>
   <style>
-  .profile-pic img {
-    width: 150px;
-    height: 150px;
+  .profile-pic {
+    width: 180px;         /* size of the circle */
+    height: 180px;
     border-radius: 50%;
-    object-fit: cover;
+    overflow: hidden;     /* forces image to stay inside circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ddd;     /* optional: adds a soft bg if image has gaps */
+  }
+
+  .profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    /* perfect crop */
   }
 </style>
 
@@ -118,11 +128,7 @@
           <div class="profile-pic">  
               <img 
                 src="PXL_20251021_085929063.PORTRAIT.jpg" 
-                alt="Profile Picture"
-                width="180" 
-                height="180"
-                style="border-radius:50%; object-fit:cover;"
-            >
+                alt="Profile Picture">
           </div>
           <div style="margin-top:10px;font-weight:700">MOHD SHAHZEB</div>
           <div style="font-size:13px;color:var(--muted)">Delhi, INDIA</div>
@@ -180,19 +186,19 @@
             <div style="margin-top:8px;font-size:13px;color:var(--muted)"></div>
           </article>
 
-       section id="contact" class="card">
+       <section id="contact" class="card">
         <h3>Contact</h3>
         <div class="grid-2">
           <div>
             <p style="color:var(--muted)">Feel free to reach out for project collaboration or internship opportunities.</p>
             <ul style="list-style:none;padding:0;color:var(--muted)">
-              <li><strong>Email:</strong> <a href="mailto:your.email@example.com" style="color:var(--accent)">your.email@example.com</a></li>
+              <li><strong>Email:</strong> <a href="mohdshahzeb_cse_25a04014@dtu.ac.in" style="color:var(--accent)">mohdshahzeb_cse_25a04014@dtu.ac.in</a></li>
               <li><strong>Phone:</strong> +91-8810230183</li>
               <li><strong>Location:</strong> DELHI, INDIA</li>
             </ul>
             <div style="margin-top:10px">
-              <a href="https://github.com/your-github" target="_blank" rel="noopener noreferrer">GitHub</a> •
-              <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://github.com/shahzeb1729" target="_blank" rel="noopener noreferrer">GitHub</a> •
+              <a href="https://www.linkedin.com/in/shahzeb-malik-579523238/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
           </div>
 
@@ -221,6 +227,7 @@
   </script>
 </body>
 </html>
+
 
 
 
